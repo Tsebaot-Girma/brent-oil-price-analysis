@@ -22,3 +22,5 @@ def fetch_brent_data(file_path: str) -> pd.DataFrame:
         raise FileNotFoundError(f"The file at {file_path} was not found.")
     except Exception as e:
         raise Exception(f"An error occurred while reading the file: {e}")
+
+

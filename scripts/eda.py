@@ -3,6 +3,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
+
 def plot_prices(df):
     """
     Plot the historical Brent crude oil prices.
@@ -18,6 +20,8 @@ def plot_prices(df):
     plt.grid()
     plt.show()
 
+
+
 def plot_acf_pacf(df):
     """
     Plot the ACF and PACF for the Brent crude oil prices.
@@ -32,4 +36,18 @@ def plot_acf_pacf(df):
     
     ax[0].set_title('Autocorrelation Function (ACF)')
     ax[1].set_title('Partial Autocorrelation Function (PACF)')
+    plt.show()
+
+
+
+
+
+def plot_moving_average(brent_data):
+    plt.figure(figsize=(14, 7))
+    plt.plot(brent_data.index, brent_data['Price'], label='Brent Oil Price', color='b')
+    plt.plot(brent_data.index, brent_data['Moving_Average'], label='30-Day Moving Average', color='orange')
+    plt.title('Brent Oil Prices with Moving Average')
+    plt.xlabel('Date')
+    plt.ylabel('Price')
+    plt.legend()
     plt.show()
